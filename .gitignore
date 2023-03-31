@@ -1,0 +1,46 @@
+# R
+.Rproj*
+*.Rproj
+.Rhistory
+.env
+.log
+x86_64-pc-linux-gnu-library
+.rstudio
+.Rproj.user/
+
+# python
+.idea/
+.ipynb_checkpoints/
+__pycache__/
+intermediate_data/
+*.ipynb
+
+# data 
+*.rds
+*.feather
+*.csv
+*.xls
+*.xlsx
+*.txt
+*.pdf
+*.tif
+*.out
+*.md
+*.yml
+*.h5ad
+*.mtx
+
+# folders
+Documents/
+Drug_effect_profiling/demo_imgs/
+Generative_model/figure/
+Image_based_profiling/figure/
+Object_detection/figure/
+Object_detection/object_detection_demo_imgs/
+Object_detection/object_detection_models/
+ScRNA_sequencing/figure/
+ScRNA_sequencing/CK&ORG/cache/
+ScRNA_sequencing/CK&ORG/figures/
+
+
+
