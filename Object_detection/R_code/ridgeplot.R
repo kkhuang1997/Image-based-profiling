@@ -7,13 +7,15 @@ library(hrbrthemes)
 library(dplyr)
 library(tidyr)
 library(readxl)
+library(readr)
 
 ## load data
-org_conf = read.csv("../table/org_confidence.csv", row.names = 1)
-org_conf[,1] = as.character(org_conf[,1])
+org_conf <- read_excel("../table/org_confidence.xlsx", 
+                             col_types = c("skip", "text", "numeric"))
+
 org_conf %>%
-  mutate(text = fct_reorder(text, value)) %>%
-  ggplot(aes(y=text, x=value,  fill=text)) +
+  mutate(text = fct_reorder(Date, Live_prob)) %>%
+  ggplot(aes(y=Date, x=Live_prob,  fill=Date)) +
   geom_density_ridges_gradient(alpha=0.5, scale = 2, rel_min_height = 0.011) +
   theme_ridges() +
   scale_fill_viridis_d() +
@@ -22,5 +24,5 @@ org_conf %>%
     panel.spacing = unit(0.1, "lines"),
     strip.text.x = element_text(size = 8),
   ) +
-  xlab("Success probability(%)") +
+  xlab("Live_prob") +
   ylab("Date")
